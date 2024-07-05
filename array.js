@@ -1,0 +1,11 @@
+let myArray = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log("first array:", myArray);
+let myArray1 = new Array(myArray);
+console.log("new array elements", myArray1);
+myArray.push(10);
+console.log("add element at end of array", myArray);
+myArray.pop(myArray);
+console.log("remove last element", myArray);
+var myArray2 = new Array("geofrey", "joan", "milugo", "peter");
+myArray.splice(2, 1, myArray2[0], myArray);
+console.log(myArray);
