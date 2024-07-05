@@ -1,3 +1,4 @@
+//DAY 0 create and manipulate arrays methods
 let myArray = [1, 2, 3, 4, 5, 6, 7, 8];
 console.log("first array:", myArray);
 let myArray1 = [myArray];
