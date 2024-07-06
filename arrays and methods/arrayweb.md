@@ -1,4 +1,3 @@
-Sure! Let's go through the JavaScript methods and properties used in the provided HTML document:
 
 ### 1. `innerHTML`
 - **What it is**: `innerHTML` is a property of an HTML element that represents the HTML content inside that element.
