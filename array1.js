@@ -1,4 +1,4 @@
-//array access and information
+//DAY 1 array access and information
 var people = ["geofrey", "ian", "peter", "joan"];
 console.log(people.includes("geofrey"));
 if (people.includes("geofrey")) {
