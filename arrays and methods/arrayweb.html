@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog Post Manager</title>
+    <title>my journal app</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,65 +23,18 @@
             margin-top: 10px;
         }
     </style>
-</head>
-
-<body>
-    <h1>Simple Blog Post Manager</h1>
-    <div id="posts">
-        <!-- Blog posts will be displayed here -->
-    </div>
-    <div class="buttons">
-        <input type="text" id="newPost" placeholder="Enter new post" />
-        <button onclick="addPost()">Add Post</button>
-        <button onclick="removeLastPost()">Remove Last Post</button>
-        <button onclick="removeFirstPost()">Remove First Post</button>
-        <button onclick="addPostToBeginning()">Add Post to Beginning</button>
-    </div>
-    <script>
-        let posts = ["Welcome to my blog!", "Today we talk about JavaScript.", "Array methods are powerful."];
-
-        function displayPosts() {
-            const postsDiv = document.getElementById('posts');
-            postsDiv.innerHTML = '';
-            posts.forEach((post, index) => {
-                const postDiv = document.createElement('div');
-                postDiv.className = 'post';
-                postDiv.innerText = post;
-                postsDiv.appendChild(postDiv);
-            });
-        }
-
-        function addPost() {
-            const newPost = document.getElementById('newPost').value;
-            if (newPost) {
-                posts.push(newPost);
-                document.getElementById('newPost').value = '';
-                displayPosts();
-            }
-        }
-
-        function removeLastPost() {
-            posts.pop();
-            displayPosts();
-        }
-
-        function removeFirstPost() {
-            posts.shift();
-            displayPosts();
-        }
-
-        function addPostToBeginning() {
-            const newPost = document.getElementById('newPost').value;
-            if (newPost) {
-                posts.unshift(newPost);
-                document.getElementById('newPost').value = '';
-                displayPosts();
-            }
-        }
-
-        // Initial display of posts
-        displayPosts();
-    </script>
-</body>
 
 </html>
+<div id="journals">
+    <!-- Journal entries will be displayed here -->
+</div>
+<div class="buttons">
+    <input type="text" id="newJournal" placeholder="Enter new journal entry" />
+
+    <button onclick="addJournal()">Add Journal Entry</button>
+    <button onclick="removeLastJournal()">Remove Last Journal Entry</button>
+    <button onclick="removeFirstJournal()">Remove First Journal Entry</button>
+    <button onclick="addJournalToBeginning()">Add Journal Entry to Beginning</button>
+</div>
+<script src="script.js"></script>
+</body>
