@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Post Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        .post {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="posts">
+        <!-- Blog posts will be displayed here -->
+    </div>
+    <div class="buttons">
+        <input type="text" id="newPost" placeholder="Enter new post" />
+        <button onclick="addPost()">Add Post</button>
+        <button onclick="removeLastPost()">Remove Last Post</button>
+        <button onclick="removeFirstPost()">Remove First Post</button>
+        <button onclick="addPostToBeginning()">Add Post to Beginning</button>
+    </div>
+</body>
