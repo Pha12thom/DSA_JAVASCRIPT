@@ -187,29 +187,49 @@
      let arr = [3, 1, 2];
      arr.sort(); // arr is now [1, 2, 3]
      ```
+     ## Advanced Array Methods
 
-## Advanced Array Methods
+     23. **`flat(depth)`**
+          - Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
 
-23. **`flat(depth)`**
-     - Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+          ```javascript
+          let arr = [1, [2, [3, [4]]]];
+          let flatArr = arr.flat(2); // flatArr is [1, 2, 3, [4]]
+          ```
+
+     24. **`flatMap(callback(element, index, array))`**
+          - First maps each element using a mapping function, then flattens the result into a new array.
+
+          ```javascript
+          let arr = [1, 2, 3];
+          let flatMapped = arr.flatMap(x => [x, x * 2]); // flatMapped is [1, 2, 2, 4, 3, 6]
+          ```
+
+     25. **`fill(value, start, end)`**
+          - Fills all the elements of an array from a start index to an end index with a static value.
+
+          ```javascript
+          let arr = [1, 2, 3];
+          arr.fill(0, 1, 2); // arr is now [1, 0, 3]
+          ```
+
+     Here's a broader example of using these advanced array methods:
 
      ```javascript
-     let arr = [1, [2, [3, [4]]]];
-     let flatArr = arr.flat(2); // flatArr is [1, 2, 3, [4]]
+     let nestedArray = [1, [2, [3, [4]]]];
+
+     // Using flat to flatten the nested array
+     let flattenedArray = nestedArray.flat(Infinity);
+     console.log(flattenedArray); // Output: [1, 2, 3, 4]
+
+     // Using flatMap to double each element in the array
+     let doubledArray = flattenedArray.flatMap(x => [x, x]);
+     console.log(doubledArray); // Output: [1, 1, 2, 2, 3, 3, 4, 4]
+
+     // Using fill to replace elements in the array
+     doubledArray.fill(0, 2, 6);
+     console.log(doubledArray); // Output: [1, 1, 0, 0, 0, 0, 4, 4]
      ```
 
-24. **`flatMap(callback(element, index, array))`**
-     - First maps each element using a mapping function, then flattens the result into a new array.
-
-     ```javascript
-     let arr = [1, 2, 3];
-     let flatMapped = arr.flatMap(x => [x, x * 2]); // flatMapped is [1, 2, 2, 4, 3, 6]
-     ```
-
-25. **`fill(value, start, end)`**
-     - Fills all the elements of an array from a start index to an end index with a static value.
-
-     ```javascript
-     let arr = [1, 2, 3];
-     arr.fill(0, 1, 2); // arr is now [1, 0, 3]
+     These advanced array methods provide powerful functionality for manipulating and transforming arrays in JavaScript.
      ```
