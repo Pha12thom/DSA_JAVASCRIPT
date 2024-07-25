@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> my portfolio</title>
+    <style>
+        * {
+            margin: 0%;
+        }
+        
+        body {
+            backdrop-filter: 100%;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigator" onload="displayLoad()">
+        <nav>
+            <a>about</a>
+            <a>portfolio</a>
+            <a>projects</a>
+            <a>contact</a>
+            <a>footer</a>
+        </nav>
+    </div>
+    <div id="about">
+
+
+    </div>
+    <script>
+        function displayLoad(navigator) {
+            var navigator = document.getElementById("navigator");
+            message = alert("hello welcome to milugo portfolio");
+
+
+        }
+        setTimeout(displayLoad(), 1000);
+
+        var projects = {
+            "project1": "description",
+        }
+
+        function aboutGeofrey() {
+            document.getElementById("about")
+
+        }
+    </script>
+</body>
+
+</html>

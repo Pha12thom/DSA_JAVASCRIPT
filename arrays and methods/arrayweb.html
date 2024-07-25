@@ -30,11 +30,18 @@
 </div>
 <div class="buttons">
     <input type="text" id="newJournal" placeholder="Enter new journal entry" />
+    <input type="value" id="removeIndex" placeholder="delete journal at index">
 
-    <button onclick="addJournal()">Add Journal Entry</button>
+    <button onclick="addJournal()">Add last Journal Entry</button>
     <button onclick="removeLastJournal()">Remove Last Journal Entry</button>
     <button onclick="removeFirstJournal()">Remove First Journal Entry</button>
     <button onclick="addJournalToBeginning()">Add Journal Entry to Beginning</button>
+    <button onclick="removeAllJournals()">Remove All Journal Entries</button>
+    <button onclick="replaceJournal()">replace journal</button>
+
+</div>
+<div id="display">
+
 </div>
 <script src="script.js"></script>
 </body>
