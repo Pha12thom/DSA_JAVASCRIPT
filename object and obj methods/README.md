@@ -142,7 +142,10 @@ const person = {
     age: 30
 };
 
-const { firstName, age } = person;
+const { 
+    firstName, 
+    age 
+} = person;
 console.log(firstName); // John
 console.log(age); // 30
 ```

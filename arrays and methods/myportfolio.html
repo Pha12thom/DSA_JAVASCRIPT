@@ -2,54 +2,445 @@
 <html lang="en">
 
 <head>
-    <title> my portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milugo Geofrey Ouma - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0%;
-        }
-        
         body {
-            backdrop-filter: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0d0d0d, #1c1c3c);
+            color: #ddd;
+            overflow: hidden;
         }
         
-        nav {
+        .welcome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            font-size: 36px;
+            animation: explode 2s forwards;
+        }
+        
+        @keyframes explode {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .navbar,
+        .container,
+        .footer,
+        .rain {
+            display: none;
+        }
+        
+        .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            background: rgba(51, 51, 51, 0.7);
+            padding: 10px 20px;
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar h2 {
+            color: #fff;
+            margin: 0;
+        }
+        
+        .navbar nav {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .navbar nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        
+        .navbar nav a:hover {
+            background: #444;
+            border-radius: 5px;
+        }
+        
+        .navbar .toggle-btn {
+            display: none;
+            background: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .container {
+            padding: 20px;
+        }
+        
+        header,
+        section {
+            padding: 20px 0;
+        }
+        
+        header h1,
+        section h2 {
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            border-right: .15em solid #fff;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
+        }
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent
+            }
+            50% {
+                border-color: white;
+            }
+        }
+        
+        header p {
+            text-align: center;
+            color: #ddd;
+        }
+        
+        .about,
+        .contact {
+            background: rgba(0, 128, 0, 0.2);
+            /* Green tint for transparency */
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .about img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .skills div {
+            background: rgba(0, 128, 0, 0.2);
+            /* Green tint for transparency */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 10px;
+            flex: 1 1 calc(33% - 10px);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #fff;
+        }
+        
+        .skills div i {
+            font-size: 24px;
+            color: #ddd;
+        }
+        
+        .project {
+            background: rgba(0, 128, 0, 0.2);
+            /* Green tint for transparency */
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            color: #fff;
+        }
+        
+        .project.visible {
+            opacity: 1;
+        }
+        
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .project h3 a {
+            color: #ffcc00;
+            /* Change the color to something more vibrant */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .project h3 a:hover {
+            color: #ffd700;
+            /* Lighten the color on hover */
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 128, 0, 0.2);
+            /* Green tint for transparency */
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            color: #fff;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: rgba(0, 128, 0, 0.2);
+            /* Green tint for transparency */
+            color: #fff;
+        }
+        
+        .contact-form button {
+            background: #339933;
+            /* Green button */
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .contact-form button:hover {
+            background: #2a7a2a;
+            /* Darker green on hover */
+        }
+        
+        .footer {
+            background: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar nav {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+            }
+            .navbar nav a {
+                padding: 10px 0;
+            }
+            .navbar .toggle-btn {
+                display: block;
+            }
+            .navbar.active nav {
+                display: flex;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: rgba(51, 51, 51, 0.7);
+                flex-direction: column;
+                gap: 0;
+                padding: 10px 0;
+            }
+        }
+        
+        .rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .rain .drop {
+            position: absolute;
+            bottom: 100%;
+            width: 6px;
+            /* Larger width */
+            height: 30px;
+            /* Larger height */
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            /* More transparent */
+            border-radius: 50%;
+            /* Rounded edges for droplet effect */
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="navigator" onload="displayLoad()">
+    <div class="welcome">
+        Welcome to Milugo Code Labs
+    </div>
+    <div class="navbar">
+        <h2> code👨🏿‍💻
+            <\> decode 🧬 </h2>
+        <button class="toggle-btn" onclick="toggleNavbar()">☰</button>
         <nav>
-            <a>about</a>
-            <a>portfolio</a>
-            <a>projects</a>
-            <a>contact</a>
-            <a>footer</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
         </nav>
     </div>
-    <div id="about">
+    <div class="container">
+        <header id="home">
+            <h1>Milugo Geofrey Ouma</h1>
+            <p>Creative Developer and Designer</p>
+        </header>
 
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <p>Hello! I'm Milugo Geofrey Ouma, a passionate developer with experience in creating dynamic and responsive web applications. I love coding and always strive to improve my skills.</p>
+        </section>
 
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills">
+                <div><i class="fas fa-code"></i> HTML</div>
+                <div><i class="fas fa-code"></i> CSS</div>
+                <div><i class="fas fa-code"></i> JavaScript</div>
+                <div><i class="fas fa-database"></i> SQL</div>
+                <div><i class="fas fa-code"></i> Python</div>
+                <div><i class="fas fa-code"></i> Java</div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>My Portfolio</h2>
+            <div class="project">
+                <h3><a href="project1-link.html">Project 1</a></h3>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="project">
+                <h3><a href="project2-link.html">Project 2</a></h3>
+                <p>Description of Project 2.</p>
+            </div>
+            <div class="project">
+                <h3><a href="project3-link.html">Project 3</a></h3>
+                <p>Description of Project 3.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </div>
+    <footer class="footer">
+        <p>Connect with me on social media</p>
+        <div class="social-links">
+            <a href="https://github.com/Geoffrey-Milugo" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/GeoffreyMilugo" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/Geoffrey-Milugo" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Milugo Geofrey Ouma. All rights reserved.</p>
+    </footer>
+    <div class="rain" id="rain"></div>
     <script>
-        function displayLoad(navigator) {
-            var navigator = document.getElementById("navigator");
-            message = alert("hello welcome to milugo portfolio");
-
-
-        }
-        setTimeout(displayLoad(), 1000);
-
-        var projects = {
-            "project1": "description",
+        function toggleNavbar() {
+            document.querySelector('.navbar').classList.toggle('active');
         }
 
-        function aboutGeofrey() {
-            document.getElementById("about")
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.project');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
 
-        }
+            projects.forEach(project => {
+                observer.observe(project);
+            });
+
+            const rainContainer = document.getElementById('rain');
+            const createRainDrop = () => {
+                const drop = document.createElement('div');
+                drop.classList.add('drop');
+                drop.style.left = `${Math.random() * 100}%`;
+                drop.style.animationDuration = `${Math.random() * 1 + 0.5}s`;
+                drop.style.animationDelay = `${Math.random() * 0.5}s`;
+                rainContainer.appendChild(drop);
+                setTimeout(() => {
+                    drop.remove();
+                }, 2000);
+            };
+            setInterval(createRainDrop, 50);
+
+            setTimeout(() => {
+                document.querySelector('.welcome').style.display = 'none';
+                document.querySelector('.navbar').style.display = 'flex';
+                document.querySelector('.container').style.display = 'block';
+                document.querySelector('.footer').style.display = 'block';
+                document.querySelector('.rain').style.display = 'block';
+            }, 3000);
+        });
     </script>
 </body>
 

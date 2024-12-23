@@ -38,3 +38,29 @@ function isPrime(n) {
 }
 
 console.log(isPrime(11)); // true
+
+function exampleQuadratic(n) {
+    for (var i = 0; i < n; i++) {
+        console.log(i);
+        for (var j = i; j < n; j++) {
+            console.log(j);
+        }
+    }
+}
+
+
+exampleQuadratic(2)
+
+var numbers = [1, 2, 3, 4, 5, 6, 7];
+for (
+    var i = 1; i < numbers.length; i++
+) {
+    console.log(i);
+}
+
+function Fibonacci(n) {
+    n <= 1;
+    n = n - 1
+    return Fibonacci()
+
+}

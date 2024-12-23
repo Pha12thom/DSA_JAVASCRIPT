@@ -1,4 +1,4 @@
-let myJournals = ["journal1", "journal2", "journal3", "journal4"];
+let myJournals = [""];
 
 function displayJournal() {
     var journalsContainer = document.getElementById("journals");
